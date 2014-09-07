@@ -1,0 +1,142 @@
+% Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+
+\documentclass[draft,final]{vutinfth} % Remove option 'final' to obtain debug information.
+
+% Extended LaTeX functionality is enables by including packages with \usepackage{...}.
+\usepackage{fixltx2e}  % Provides fixes for several errors in LaTeX2e.
+\usepackage{amsmath}   % Extended typesetting of mathematical expression.
+\usepackage{amssymb}   % Provides a multitude of mathematical symbols.
+\usepackage{mathtools} % Further extensions of mathematical typesetting.
+\usepackage{microtype} % Small-scale typographic enhancements.
+\usepackage{enumitem}  % User control over the layout of lists (itemize, enumerate, description).
+\usepackage{multirow}  % Allows table elements to span several rows.
+\usepackage{booktabs}  % Improves the typesettings of tables.
+\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
+\usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
+\usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
+\usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
+
+\setsecnumdepth{subsection} % enumerate subsections
+
+% Use an optional index
+\makeindex
+% Use an optional glossary
+\makeglossaries
+%\glstocfalse % remove the glossaries from the table of contents
+
+% Set persons with 4 arguments:
+%  {title before name}{name}{title after name}{gender}
+%  where both titles are optional (i.e. can be given as empty brackets {})
+\setauthor{Pretitle}{Forename Surname}{Posttitle}{female}
+\setadvisor{Pretitle}{Forename Surname}{Posttitle}{male}
+
+% For bachelor and master theses
+\setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+\setsecondassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+\setthirdassistant{Pretitle}{Forename Surname}{Posttitle}{male}
+
+% For dissertations
+\setfirstreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
+\setsecondreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
+
+% Required data
+\setaddress{Address}
+\setregnumber{0123456}
+\setdate{01}{01}{2001}
+\settitle{Title of the Thesis}{Titel der Arbeit} % sets English and German version of the title (both can be English or German)
+\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % sets English and German version of the subtitle (both can be English or German)
+
+% Select the thesis type: bachelor / master / doctor
+% Bachelor:
+%\setthesis{bachelor}
+%
+% Master:
+\setthesis{master}
+\setmasterdegree{dipl.} % dipl. / rer.nat. / rer.soc.oec. / master
+%
+% Doctor:
+%\setthesis{doctor}
+%\setdoctordegree{rer.soc.oec.}% rer.nat. / techn. / rer.soc.oec.
+
+% For bachelor and master
+\setcurriculum{Media Informatics and Visual Computing}{Medieninformatik und Visual Computing} % sets the English and German name of the curriculum
+
+
+\begin{document}
+
+%\makepagestyle{vutinfth}
+%\makeevenfoot{vutinfth}{\thepage}{TEST}{}
+%\makeoddfoot{vutinfth}{}{TEST}{\thepage}
+%\pagestyle{vutinfth}
+
+%\makepagestyle{vutinfthch}
+%\makeevenfoot{vutinfthch}{\thepage}{CHAPTER}{}
+%\makeoddfoot{vutinfthch}{}{CHAPTER}{\thepage}
+
+%\aliaspagestyle{chapter}{vutinfthch}
+
+\frontmatter % switches to roman numbering
+% The structure of the thesis has to conform to
+%  http://www.informatik.tuwien.ac.at/dekanat
+
+\addtitlepage{naustrian} % German title page
+\addtitlepage{english} % English title page
+\addstatementpage
+
+\begin{danksagung*}
+Ihr Text hier.
+\end{danksagung*}
+
+\begin{acknowledgements*}
+Enter your text here.
+\end{acknowledgements*}
+
+\begin{kurzfassung}
+Ihr Text hier.
+\end{kurzfassung}
+
+\begin{abstract}
+Enter your text here.
+\end{abstract}
+
+% Select the language of the thesis, e.g., english or naustrian.
+\selectlanguage{english}
+
+% Add a table of contents (toc)
+\tableofcontents % starred version, i.e., \tableofcontents*, removes the self-entry
+
+% Use an optional list of figures
+\listoffigures % starred version, i.e., \listoffigures*, removes the toc entry
+
+% Use an optional list of tables
+\listoftables % starred version, i.e., \listoftables*, removes the toc entry
+
+% Use an optional list of alogrithms
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+
+% Switch to arabic numbering and start the enumeration of chapters in the table of content.
+\mainmatter
+
+\chapter{Introduction}
+Enter your text here.
+
+\chapter{Additional Chapter}
+Enter your text here.
+
+% Remove following line for the final thesis.
+\input{intro.tex} % A short introduction to LaTeX.
+
+\backmatter
+
+% Add a bibliography
+\bibliographystyle{alpha}
+\bibliography{intro}
+
+% Add an index
+\printindex
+
+% Add a glossary
+\printglossaries
+
+\end{document}
