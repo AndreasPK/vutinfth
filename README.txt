@@ -12,6 +12,17 @@ package includes the document class and its documentation as well as an example
 document that includes a short introduction to LaTeX.
 
 
+Support
+-------
+The vutinfth document class is developed using a GitLab-supported Git
+repository. You can find it at
+                https://gitlab.cg.tuwien.ac.at/auzinger/vutinfth
+where a history of the development process is given. If you encounter problems
+with using vutinfth, use the Issues section of GitLab to provide a description
+and to alert the developers of your issue. Furthermore, you can use the Issues
+section to request features or give suggestions.
+
+
 Installation
 ------------
 To use the vutinfth class, it has first to be generated from the documented
