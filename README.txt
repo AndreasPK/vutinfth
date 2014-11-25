@@ -60,7 +60,6 @@ README.txt         This file.
 vutinfth.dtx       The documented source code and documentation file of the
                      vutinfth document class.
 vutinfth.ins       The installer file of the vutinfth document class.
-vutinfth.pdf       The compiled vutinfth documentation.
 
 graphics/*.*       Corporate identity graphics of the Vienna University of
                      Technology and its Faculty of Informatics.

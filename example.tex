@@ -39,6 +39,9 @@
 \setfirstreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
 \setsecondreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
 
+% For dissertations at the PhD School
+\setsecondadvisor{Pretitle}{Forename Surname}{Posttitle}{male}
+
 % Required data
 \setaddress{Address}
 \setregnumber{0123456}
@@ -46,40 +49,36 @@
 \settitle{Title of the Thesis}{Titel der Arbeit} % sets English and German version of the title (both can be English or German)
 \setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % sets English and German version of the subtitle (both can be English or German)
 
-% Select the thesis type: bachelor / master / doctor
+% Select the thesis type: bachelor / master / doctor / phd-school
 % Bachelor:
-%\setthesis{bachelor}
+\setthesis{bachelor}
 %
 % Master:
-\setthesis{master}
-\setmasterdegree{dipl.} % dipl. / rer.nat. / rer.soc.oec. / master
+%\setthesis{master}
+%\setmasterdegree{dipl.} % dipl. / rer.nat. / rer.soc.oec. / master
 %
 % Doctor:
 %\setthesis{doctor}
 %\setdoctordegree{rer.soc.oec.}% rer.nat. / techn. / rer.soc.oec.
+%
+% Doctor at the PhD School
+%\setthesis{phd-school} % Deactivate non-English title pages (see below)
 
 % For bachelor and master
 \setcurriculum{Media Informatics and Visual Computing}{Medieninformatik und Visual Computing} % sets the English and German name of the curriculum
 
+% For dissertations at the PhD School
+\setfirstreviewerdata{Affiliation, Country}
+\setsecondreviewerdata{Affiliation, Country}
+
 
 \begin{document}
-
-%\makepagestyle{vutinfth}
-%\makeevenfoot{vutinfth}{\thepage}{TEST}{}
-%\makeoddfoot{vutinfth}{}{TEST}{\thepage}
-%\pagestyle{vutinfth}
-
-%\makepagestyle{vutinfthch}
-%\makeevenfoot{vutinfthch}{\thepage}{CHAPTER}{}
-%\makeoddfoot{vutinfthch}{}{CHAPTER}{\thepage}
-
-%\aliaspagestyle{chapter}{vutinfthch}
 
 \frontmatter % switches to roman numbering
 % The structure of the thesis has to conform to
 %  http://www.informatik.tuwien.ac.at/dekanat
 
-\addtitlepage{naustrian} % German title page
+\addtitlepage{naustrian} % German title page (not for dissertations at the PhD School)
 \addtitlepage{english} % English title page
 \addstatementpage
 
