@@ -2,7 +2,7 @@
 %
 %% vutinfth.dtx
 %% Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
-% 
+%
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
 % of this license or (at your option) any later version.
@@ -10,11 +10,11 @@
 %   http://www.latex-project.org/lppl.txt
 % and version 1.3 or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
-% 
+%
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Thomas Auzinger.
-% 
+%
 % This work consists of the files vutinfth.dtx and vutinfth.ins
 % and the derived file vutinfth.cls.
 % This work also consists of the file intro.tex.
@@ -28,7 +28,7 @@
 %<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<class>\ProvidesClass{vutinfth}
 %<*class>
-    [2014/09/07 v1.0 Vienna University of Technology Faculty of Informatics thesis template]
+    [2014/11/25 v1.3 Vienna University of Technology Faculty of Informatics thesis template]
 %</class>
 %
 %<*driver>
@@ -38,7 +38,7 @@
 \usepackage{booktabs}
 \usepackage[columns=1,totoc=true]{idxlayout}
 \usepackage{hypdoc}
-\EnableCrossrefs         
+\EnableCrossrefs
 \CodelineIndex
 \RecordChanges
 \begin{document}
@@ -67,8 +67,12 @@
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 %
+% \newcommand{\issue}[1]{\href{https://gitlab.cg.tuwien.ac.at/auzinger/vutinfth/issues/#1}{Issue \#{}#1}}
+%
 % \changes{v0.9}{2014/05/30}{Pre-release version}
 % \changes{v1.0}{2014/09/07}{Initial release version}
+% \changes{v1.1}{2014/10/07}{Added references to the GitLab environment}
+% \changes{v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
 %
 % \GetFileInfo{vutinfth.dtx}
 %
@@ -80,7 +84,7 @@
 % ^^A\DoNotIndex{\",\\}
 % ^^A\DoNotIndex{\else,\fi,\ifcsempty,\ifcsstring,\ifdefstrequal,\ifdefstring,\ifdraftdoc,\ifstrempty,\ifstrequal,\ifundef}
 % ^^A\DoNotIndex{\baselineskip,\bfseries,\bigskip,\centering,\chapter,\chapterstyle,\cleardoublepage,\displaydate,\expandafter,\fontsize,\footruleskip,\global,\graphicspath,\hfill,\hspace,\includegraphics,\languagename,\makeevenfoot,\makeevenhead,\makefootrule,\makeheadposition,\makeoddfoot,\makeoddhead,\makepagestyle,\makerunningwidth,\newdata,\newgeometry,\newlength,\pagestyle,\par,\parindent,\parskip,\raisebox,\relax,\restoregeometry,\rule,\selectfont,\selectlanguage,\setkeys,\setlength,\sfdefault,\sffamily,\smallskip,\space,\ss,\string,\textwidth,\thispagestyle,\vfill,\vspace}
-% 
+%
 % \newcommand{\ispoly}{\textsuperscript{P}}
 %
 % \title{The \textsf{vutinfth} class\thanks{This document
@@ -132,6 +136,8 @@
 % \DescribeMacro{\settitle}
 % \DescribeMacro{\setsubtitle}
 % \DescribeMacro{\setcurriculum}
+% \DescribeMacro{\setfirstreviewerdata}
+% \DescribeMacro{\setsecondreviewerdata}
 % All commands in this section are called with one mandatory argument, e.g., as |\command|\marg{text}, where \meta{text} defines the content of the commands. For polylingual commands, given by |\command|\ispoly, one \meta{text} argument has to supplied for each language (see Section~\ref{sec:user:data:polylingual}). The following textual data can be set:
 % \begin{center}
 % \begin{tabular}{lllc}
@@ -144,7 +150,22 @@
 %   |\setsubtitle|\ispoly & Subtitle of the thesis & All & Yes \\
 %   |\setcurriculum|\ispoly & Name of the curriculum & B, M & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
+%   \bottomrule
+% \end{tabular}
+% \end{center}
+%
+% \begin{center}
+% \begin{tabular}{lllc}
+%   \toprule
+%   Command & Role & Type & Optional\\
+%   \midrule
+%   |\setfirstreviewerdata| & Affiliation and country & P & No \\
+%                           & of first reviewer       &   &    \\
+%   |\setsecondreviewerdata| & Affiliation and country & P & No \\
+%                            & of second reviewer      &   &    \\
+%   \midrule
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -154,6 +175,7 @@
 %
 % \DescribeMacro{\setauthor}
 % \DescribeMacro{\setadvisor}
+% \DescribeMacro{\setsecondadvisor}
 % \DescribeMacro{\setfirstassistant}
 % \DescribeMacro{\setsecondassistant}
 % \DescribeMacro{\setthirdassistant}
@@ -167,13 +189,14 @@
 %   \midrule
 %   |\setauthor| & Author of the thesis & All & No \\
 %   |\setadvisor| & Main advisor of the thesis & All & No \\
+%   |\setsecondadvisor| & Second advisor of the thesis & P & Yes \\
 %   |\setfirstassistant| & First advising assistant & B, M & Yes \\
 %   |\setsecondassistant| & Second advising assistant & B, M & Yes \\
 %   |\setthirdassistant| & Third advising assistant & B, M & Yes \\
-%   |\setfirstreviewer| & First thesis reviewer & D & No \\
-%   |\setsecondreviewer| & Second thesis reviewer & D & No \\
+%   |\setfirstreviewer| & First thesis reviewer & D, P & No \\
+%   |\setsecondreviewer| & Second thesis reviewer & D, P & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -189,7 +212,7 @@
 %   \midrule
 %   |\setdate| & Signing date & All & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -199,7 +222,6 @@
 %
 % All commands in this section are called with at least one madatory argument called \meta{list}, e.g., as |\command|\dots\marg{list}\dots, where \meta{list} is given one element from a set of possible arguments.
 %
-% \newpage
 % \DescribeMacro{\setauthor}
 % \DescribeMacro{\setadvisor}
 % \marginpar{\strut\hfill$\cdots$}
@@ -225,6 +247,8 @@
 %   |\setthesis|\marg{list} & |bachelor| & Specifies a bachelor's thesis. \\
 %                           & |master| & Specifies a master's thesis. \\
 %                           & |doctor| & Specifies a dissertation. \\
+%                           & |phd-school| & Specifies a disseration at the Vienna \\
+%                           &              & PhD school of Informatics. \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -301,6 +325,7 @@
 %   \bottomrule
 % \end{tabular}
 % \end{center}
+% Note that a non-English title page is not available for a dissertation at the Vienna PhD School of Informatics.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \subsection{Layout}
@@ -350,7 +375,7 @@
 % Used as |\CreateData|\marg{name}, it generates a command |\set|\meta{name}.
 % Used as |\set|\meta{name}\marg{string}, the newly created command assigns the value \meta{string} to the internal variable |\vutinfth@data@|\meta{name}.
 % The variable is initialized with an error value to alert the user of the fact that \meta{string} was not supplied via the |\set|\meta{name} command.
-% Furthermore, a command |\vutinfth@data@|\meta{name}|@def| is created, to increase source code readability when verifying the existance of a specific data item. 
+% Furthermore, a command |\vutinfth@data@|\meta{name}|@def| is created, to increase source code readability when verifying the existance of a specific data item.
 % See Section~\ref{sec:impl:data:declarations} for examples.
 %
 % \DescribeMacro{\CreatePerson}
@@ -401,7 +426,7 @@
 % If text is supplied to \meta{center}, it is added below a rule, right to the possible date and place entry.
 % If text is supplied to \meta{right}, it is added below a rule, right to the possible signature field created by \meta{center}.
 % This command ensures a uniform width and positioning of the signature fields on both the title pages and the statement of originality.
-% 
+%
 % \DescribeMacro{\SignatureBlock}
 % Used as |\SignatureBlock|, it generates the signature fields for both author and advisor.
 %
@@ -839,12 +864,52 @@
 % \end{macro}
 % \end{macro}
 %
+% \begin{macro}{\vutinfth@thesis@doctortype@doctor}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% \begin{macro}{\vutinfth@thesis@doctortype@phd}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% Two doctor thesis categories are differentiated: |doctor| and |phd|, where the latter is for dissertation in the context of the Vienna PhD School of Informatics.
+%    \begin{macrocode}
+\newcommand{\vutinfth@thesis@doctortype@doctor}{%
+  vutinfth@doctor}%
+\newcommand{\vutinfth@thesis@doctortype@phd}{%
+  vutinfth@phd}%
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\ifdoctor}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% \begin{macro}{\ifphd}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% Convenience macros to determine the category of the selected doctor thesis type. These need to be nested inside |\ifgraduate| conditions.
+%    \begin{macrocode}
+\newcommand{\ifdoctor}[1]{%
+  \ifestrequal{\vutinfth@thesis@doctortype}{%
+    \vutinfth@thesis@doctortype@doctor
+  }{#1}{}%
+}%
+\newcommand{\ifphd}[1]{%
+  \ifestrequal{\vutinfth@thesis@doctortype}{%
+    \vutinfth@thesis@doctortype@phd
+  }{#1}{}%
+}%
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
 % \begin{macro}{\vutinfth@thesis@basetype}
+% \begin{macro}{\vutinfth@thesis@doctortype}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
 % \begin{macro}{\vutinfth@thesis@thesisname}
 % \begin{macro}{\vutinfth@thesis@degreename}
 % Initialize the thesis category, the type and the specific degree with error messages.
 %    \begin{macrocode}
 \newcommand{\vutinfth@thesis@basetype}{%
+  \ClassError{vutinfth}{No \string\setthesis \space issued}{%
+    Set thesis type with \string\setthesis.}%
+}%
+\newcommand{\vutinfth@thesis@doctortype}{%
   \ClassError{vutinfth}{No \string\setthesis \space issued}{%
     Set thesis type with \string\setthesis.}%
 }%
@@ -860,16 +925,21 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
-% 
+% \end{macro}
+%
 % \begin{macro}{\vutinfth@thesis@bachelor}
 % \begin{macro}{\vutinfth@thesis@master}
 % \begin{macro}{\vutinfth@thesis@doctor}
-% Three main thesis types are differentiated: |bachelor|, |master|, and |doctor|.
+% \begin{macro}{\vutinfth@thesis@phd}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% Four main thesis types are differentiated: |bachelor|, |master|, |doctor|, and |phd-school|.
 %    \begin{macrocode}
 \newcommand{\vutinfth@thesis@bachelor}{bachelor}%
 \newcommand{\vutinfth@thesis@master}{master}%
 \newcommand{\vutinfth@thesis@doctor}{doctor}%
+\newcommand{\vutinfth@thesis@phd}{phd-school}%
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -893,6 +963,7 @@
 % \end{macro}
 %
 % \begin{macro}{\setthesis}
+% \changes{v1.3}{2014/11/25}{Altered to support multiple dissertation types. \issue{4}}
 % Sets the thesis type.
 %    \begin{macrocode}
 \newcommand{\setthesis}[1]{%
@@ -926,11 +997,24 @@
 %    \begin{macrocode}
    \renewcommand{\vutinfth@thesis@basetype}{%
      \vutinfth@thesis@basetype@graduate}%
-   \@setthesisname{\vutinfth@polylingual@DOCTORTHESIS}% 
+   \renewcommand{\vutinfth@thesis@doctortype}{%
+     \vutinfth@thesis@doctortype@doctor}%
+   \@setthesisname{\vutinfth@polylingual@DOCTORTHESIS}%
    \@setdegreename{%
      \ClassError{vutinfth}{No \string\setdoctordegree \space issued}{%
        Set doctor degree with \string\setdoctordegree.}%
    }%
+  }{}%
+  \ifdefstring{\vutinfth@thesis@phd}{#1}{%
+%    \end{macrocode}
+% Initializes |phd-school| thesis type.
+%    \begin{macrocode}
+   \renewcommand{\vutinfth@thesis@basetype}{%
+     \vutinfth@thesis@basetype@graduate}%
+   \renewcommand{\vutinfth@thesis@doctortype}{%
+     \vutinfth@thesis@doctortype@phd}%
+   \@setthesisname{\vutinfth@polylingual@PHDTHESIS}%
+   \@setdegreename{\vutinfth@polylingual@Pdeg}%
   }{}%
 }%
 %    \end{macrocode}
@@ -1034,18 +1118,23 @@
 %\label{sec:impl:data:declarations}
 %
 % \begin{macro}{Textual Data}
+% \changes{v1.3}{2014/11/25}{Updated to support external reviewer data. \issue{4}}
 % Creates the required textual data entries.
 %    \begin{macrocode}
 \CreateData{address}%
 \CreateData{regnumber}%
+\CreateData{firstreviewerdata}%
+\CreateData{secondreviewerdata}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{Persons}
+% \changes{v1.3}{2014/11/25}{Updated to support second advisor. Issue \issue{4}}
 % Creates the required person entries.
 %    \begin{macrocode}
 \CreatePerson{author}%
 \CreatePerson{advisor}%
+\CreatePerson{secondadvisor}%
 \CreatePerson{firstassistant}%
 \CreatePerson{secondassistant}%
 \CreatePerson{thirdassistant}%
@@ -1063,11 +1152,14 @@
 % \end{macro}
 %
 % \begin{macro}{PolyLinguals}
+% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
 % Creates the polylingual expressions.
 %    \begin{macrocode}
 \CreatePolylingual[
   english=Advisor,
   naustrian=Betreuung]{Advisor}%
+\CreatePolylingual[
+  english=Second advisor]{Secondadvisor}%
 \CreatePolylingual[
   english=submitted in partial fulfillment of the requirements
     for the degree of,
@@ -1075,6 +1167,10 @@
 \CreatePolylingual[
   english=in,
   naustrian=im Rahmen des Studiums]{in}%
+\CreatePolylingual[
+  english=within the]{within}%
+\CreatePolylingual[
+  english=Vienna PhD School of Informatics]{School}%
 \CreatePolylingual[
   english=by,
   naustrian=eingereicht von]{by}%
@@ -1092,11 +1188,22 @@
   naustrian=Mitwirkung]{Assistance}%
 \CreatePolylingual[
   english=The dissertation has been reviewed by:,
-  naustrian=Diese Dissertation haben begutachtet:]{Reviewed}%  
+  naustrian=Diese Dissertation haben begutachtet:]{Reviewed}%
+\CreatePolylingual[
+  english=External reviewers:]{Reviewers}%
 \CreatePolylingual[
   english=Vienna,
   naustrian=Wien]{Place}%
 \CreatePolylingual[
+  english=Declaration of Authorship,
+  naustrian=Erkl\"arung zur Verfassung der Arbeit]{StatementChapter}%
+\CreatePolylingual[
+  english={I hereby declare that I have written this Doctoral Thesis
+    independently, that I have completely specified the utilized
+    sources and resources and that I have definitely marked all parts
+    of the work - including tables, maps and figures - which belong
+    to other works or to the internet, literally or extracted, by
+    referencing the source as borrowed.},
   naustrian={Hiermit erkl\"are ich, dass ich diese Arbeit
     selbst\"andig verfasst habe, dass ich die verwendeten Quellen
     und Hilfsmittel vollst\"andig angegeben habe und dass ich die
@@ -1153,6 +1260,9 @@
   english=Doktorin der Sozial- und Wirtschaftswissenschaften,
   naustrian=Doktorin der Sozial- und Wirtschaftswissenschaften]{%
   DdegRerSocOecFemale}%
+\CreatePolylingual[
+  english=Doctor of Technical Sciences]{%
+  Pdeg}%
 %    \end{macrocode}
 % Thesis types.
 %    \begin{macrocode}
@@ -1168,6 +1278,8 @@
 \CreatePolylingual[
   english=DISSERTATION,
   naustrian=DISSERTATION]{DOCTORTHESIS}%
+\CreatePolylingual[
+  english=PhD THESIS]{PHDTHESIS}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1331,6 +1443,7 @@
 %    \end{macrocode}
 %
 % \begin{macro}{\AdvisorBlock}
+% \changes{v1.3}{2014/11/25}{Updated to support second advisor. \issue{4}}
 % Generates a block with the advisor's name (and potential assistances' names). An error is thrown, if the advisors are not defined consecutively, starting with the first.
 %    \begin{macrocode}
 \newcommand{\AdvisorBlock}{%
@@ -1370,6 +1483,13 @@
       \vutinfth@normalsize
       \vutinfth@polylingual@Advisor:
       \vutinfth@person@advisor@fullname
+      \ifphd{%
+        \ifdef{\vutinfth@person@secondadvisor@def}{%
+          \\
+          \vutinfth@polylingual@Secondadvisor:
+          \vutinfth@person@secondadvisor@fullname
+        }{}%
+      }%
     \end{minipage}\par%
   }%
 }%
@@ -1431,29 +1551,42 @@
       \end{minipage}%
     }%
   }%
-}%  
+}%
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{\ReviewerBlock}
+% \changes{v1.3}{2014/11/25}{Updated to support external reviewers. \issue{4}}
 % Generates a block with the relevant signatures.
 %    \begin{macrocode}
 \newcommand{\ReviewerBlock}{%
   \ifgraduate{%
-    {\vutinfth@normalsize
-      \vutinfth@polylingual@Reviewed\\
-      \SignatureFields[h]{%
-        \vutinfth@person@firstreviewer@name
-      }{%
-        \vutinfth@person@secondreviewer@name
+    \ifdoctor{%
+      {\vutinfth@normalsize
+        \vutinfth@polylingual@Reviewed\\
+        \SignatureFields[h]{%
+          \vutinfth@person@firstreviewer@name
+        }{%
+          \vutinfth@person@secondreviewer@name
+        }%
+      }%
+    }%
+    \ifphd{%
+      {\vutinfth@normalsize
+        \vutinfth@polylingual@Reviewers\\
+        \vutinfth@person@firstreviewer@name.
+        \vutinfth@data@firstreviewerdata.\\
+        \vutinfth@person@secondreviewer@name.
+        \vutinfth@data@secondreviewerdata.\\
       }%
     }%
   }%
-}%  
+}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\SignatureBlock}
+% \changes{v1.3}{2014/11/25}{Updated to support multiple dissertation types. \issue{4}}
 % Generates a block with the relevant signatures.
 %    \begin{macrocode}
 \newcommand{\SignatureBlock}{%
@@ -1468,16 +1601,27 @@
   }%
   \ifgraduate{%
     {\vutinfth@normalsize
-      \SignatureFields[y]{}{%
-        \vutinfth@person@author@name
+      \ifdoctor{%
+        \SignatureFields[y]{}{%
+          \vutinfth@person@author@name
+        }%
+      }%
+      \ifphd{%
+        \SignatureFields[y]{%
+          \vutinfth@person@author@name
+        }{%
+          \vutinfth@person@advisor@name
+        }%
       }%
     }%
   }%
-}%  
+}%
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\AddTitlePage}
+% \changes{v1.3}{2014/11/15}{Added check for subtitle existance before usage. \issue{1}}
+% \changes{v1.3}{2014/11/25}{Updated to support PhD School mentioning and fixed the associated vertical overflow. \issue{4}}
 %   Generates the language-dependant title page. Multiline title and subtitle are supported.
 %    \begin{macrocode}
 \newcommand{\AddTitlePage}{
@@ -1512,7 +1656,11 @@
         \centering
         \vutinfth@HUGE{\bfseries\vutinfth@polylingual@Title}\\
         \bigskip
-        \vutinfth@huge{\bfseries\ifdef{\vutinfth@polylingual@Subtitle}{\vutinfth@polylingual@Subtitle}{}}%
+        \vutinfth@huge{\bfseries
+          \ifdef{\vutinfth@polylingual@Subtitle}{%
+            \vutinfth@polylingual@Subtitle}{%
+          }%
+        }%
       \end{minipage}\par
       \vutinfth@bigskip\vutinfth@bigskip
       {\vutinfth@LARGE\vutinfth@polylingual@thesisname}\par
@@ -1528,16 +1676,23 @@
       }%
       \ifgraduate{%
         {\vutinfth@LARGE{\bfseries\vutinfth@polylingual@degreename}}\par
+        \ifphd{%
+          \vutinfth@bigskip
+          {\vutinfth@large\vutinfth@polylingual@within}\par
+          \vutinfth@bigskip
+          {\vutinfth@LARGE{\bfseries\vutinfth@polylingual@School}}\par
+        }%
       }%
       \vutinfth@bigskip
       {\vutinfth@large\vutinfth@polylingual@by}\par
       \vutinfth@bigskip
       {\vutinfth@Large{\bfseries\vutinfth@person@author@fullname}}\par
       \smallskip
-      {\vutinfth@large\vutinfth@polylingual@Registrationnumber\ 
+      {\vutinfth@large\vutinfth@polylingual@Registrationnumber\
       \vutinfth@data@regnumber}\par
     }%
     \vutinfth@bigskip\vutinfth@bigskip
+    \ifgraduate{\ifphd{\vspace*{-8mm}}}%
     \begin{minipage}[b][1.6cm][c]{\textwidth}%
       \vutinfth@normalsize%
       \vutinfth@polylingual@faculty\par
@@ -1564,6 +1719,7 @@
 % \subsubsection{Front Matter Material}
 %
 % \begin{macro}{\AddStatementPage}
+% \changes{v1.3}{2014/11/25}{Updated to support multiple languages. \issue{4}}
 %   Generates the statement page.
 %    \begin{macrocode}
 \newcommand{\AddStatementPage}{
@@ -1584,14 +1740,14 @@
   \setlength{\parskip}{0pt plus 1pt}%
   \begin{SFFont}{phv}%
     \sffamily
-	  \chapter*{Erkl\"arung zur Verfassung der Arbeit}%
-	  \vutinfth@person@author@fullname\\
-	  \vutinfth@data@address\par
-	  \vspace{1.2cm}%
-	  {\normalfont\vutinfth@polylingual@Statement}\par
-	  \vspace{1.2cm}%
-	  \SignatureFields[y]{\vutinfth@person@author@name}{}%
-	\end{SFFont}%
+      \chapter*{\vutinfth@polylingual@StatementChapter}%
+      \vutinfth@person@author@fullname\\
+      \vutinfth@data@address\par
+      \vspace{1.2cm}%
+      {\normalfont\vutinfth@polylingual@Statement}\par
+      \vspace{1.2cm}%
+      \SignatureFields[y]{\vutinfth@person@author@name}{}%
+  \end{SFFont}%
   \cleardoublepage
   \vutinfth@restorelayout
 %^^A  \restoregeometry
@@ -1610,11 +1766,19 @@
 % \end{macro}
 %
 % \begin{macro}{\addstatementpage}
+% \changes{v1.3}{2014/11/25}{Updated to support english version. \issue{4}}
 % Generates the statement page.
 %    \begin{macrocode}
 \newcommand{\addstatementpage}{%
   \selectlanguage{naustrian}%
-  \AddStatementPage
+  \ifundergraduate{\AddStatementPage}%
+  \ifgraduate{%
+    \ifdoctor{\AddStatementPage}%
+    \ifphd{%
+      \selectlanguage{english}%
+      \AddStatementPage
+    }%
+  }%
 }%
 %    \end{macrocode}
 % \end{macro}

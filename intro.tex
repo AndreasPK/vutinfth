@@ -1,6 +1,6 @@
 %% intro.tex
 %% Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
-% 
+%
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
 % of this license or (at your option) any later version.
@@ -8,11 +8,11 @@
 %   http://www.latex-project.org/lppl.txt
 % and version 1.3 or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
-% 
+%
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Thomas Auzinger.
-% 
+%
 % This work consists of the files vutinfth.dtx and vutinfth.ins
 % and the derived file vutinfth.cls.
 % This work also consists of the file intro.tex.
@@ -26,8 +26,8 @@
 
 \newglossaryentry{texteditor}
 {
-	name={editor},
-	description={A text editor is a type of program used for editing plain text files.}
+  name={editor},
+  description={A text editor is a type of program used for editing plain text files.}
 }
 
 \chapter{Introduction to \LaTeX}
@@ -43,18 +43,18 @@ Depending on the operating system, different implementations are available as sh
 Otherwise, obscure errors and tedious debugging ensue.
 
 \begin{table}
-	\centering
-	\begin{tabular}{cccc}
-		\toprule
-		Distribution & Unix         & Windows      & MacOS        \\
-		\midrule
-		TeX Live     & \textbf{yes} & yes          & (yes)        \\
-		MacTeX       & no           & no           & \textbf{yes} \\
-		MikTeX       & no           & \textbf{yes} & no           \\
-		\bottomrule
-	\end{tabular}
-	\caption{\TeX/\LaTeX\ distributions for different operating systems. Recomended choice in \textbf{bold}.}
-	\label{tab:distrib} % \label has to be placed AFTER \caption to produce correct cross-references.
+  \centering
+  \begin{tabular}{cccc}
+    \toprule
+    Distribution & Unix         & Windows      & MacOS        \\
+    \midrule
+    TeX Live     & \textbf{yes} & yes          & (yes)        \\
+    MacTeX       & no           & no           & \textbf{yes} \\
+    MikTeX       & no           & \textbf{yes} & no           \\
+    \bottomrule
+  \end{tabular}
+  \caption{\TeX/\LaTeX\ distributions for different operating systems. Recomended choice in \textbf{bold}.}
+  \label{tab:distrib} % \label has to be placed AFTER \caption to produce correct cross-references.
 \end{table}
 
 \section{Editors}
@@ -74,38 +74,38 @@ To compile the current document, the steps as shown in Table~\ref{tab:compile} h
 
 
 \begin{table}
-	\centering
-	\begin{tabular}{rl}
-		\toprule
-		& Description \\
-		\midrule
-		1 & Scan for refs, toc/lof/lot/loa items and cites \\
-		2 & Build the bibliography     \\
-		3 & Link refs and build the toc/lof/lot/loa \\
-		4 & Link the bibliography \\
-		5 & Build the glossary \\
-		6 & Build the acronyms \\
-		7 & Build the index \\
-		8 & Link the glossary, acronyms, and the index \\
-		9 & Link the bookmarks \\
-		\midrule
-		& Command \\
-		\midrule
-		1 & \verb|pdflatex.exe  example| \\
-		2 & \verb|bibtex.exe    example| \\
-		3 & \verb|pdflatex.exe  example| \\
-		4 & \verb|pdflatex.exe  example| \\
-		5 & \verb|makeindex.exe -t example.glg -s example.ist| \\ 
-		  & \verb|              -o example.gls example.glo| \\
-		6 & \verb|makeindex.exe -t example.alg -s example.ist| \\
-		  & \verb|              -o example.acr example.acn| \\
-		7 & \verb|makeindex.exe -t example.ilg -o example.ind example.idx| \\
-		8 & \verb|pdflatex.exe  example| \\
-		9 & \verb|pdflatex.exe  example| \\
-		\bottomrule
-	\end{tabular}
-	\caption{Compilation steps for this document. The following abbreviations were used: table of contents (toc), list of figures (lof), list of tables (lot), list of algorithms (loa).}
-	\label{tab:compile} % \label has to be placed AFTER \caption to produce correct cross-references.
+  \centering
+  \begin{tabular}{rl}
+    \toprule
+    & Description \\
+    \midrule
+    1 & Scan for refs, toc/lof/lot/loa items and cites \\
+    2 & Build the bibliography     \\
+    3 & Link refs and build the toc/lof/lot/loa \\
+    4 & Link the bibliography \\
+    5 & Build the glossary \\
+    6 & Build the acronyms \\
+    7 & Build the index \\
+    8 & Link the glossary, acronyms, and the index \\
+    9 & Link the bookmarks \\
+    \midrule
+    & Command \\
+    \midrule
+    1 & \verb|pdflatex.exe  example| \\
+    2 & \verb|bibtex.exe    example| \\
+    3 & \verb|pdflatex.exe  example| \\
+    4 & \verb|pdflatex.exe  example| \\
+    5 & \verb|makeindex.exe -t example.glg -s example.ist| \\
+      & \verb|              -o example.gls example.glo| \\
+    6 & \verb|makeindex.exe -t example.alg -s example.ist| \\
+      & \verb|              -o example.acr example.acn| \\
+    7 & \verb|makeindex.exe -t example.ilg -o example.ind example.idx| \\
+    8 & \verb|pdflatex.exe  example| \\
+    9 & \verb|pdflatex.exe  example| \\
+    \bottomrule
+  \end{tabular}
+  \caption{Compilation steps for this document. The following abbreviations were used: table of contents (toc), list of figures (lof), list of tables (lot), list of algorithms (loa).}
+  \label{tab:compile} % \label has to be placed AFTER \caption to produce correct cross-references.
 \end{table}
 
 
@@ -129,31 +129,31 @@ The commands \verb|\multirow| and \verb|\multicolumn| allow table elements to sp
 
 \begin{table}[h] % placement specifier
   \centering
-	\begin{tabular}{lll}
-	\toprule
-	\multicolumn{2}{c}{Position} \\
-	\cmidrule{1-2} % partial horizontal rule
-	Group & Abbrev & Name \\
-	\midrule
-	Goalkeeper & GK & Paul Robinson \\
-	\midrule
-	\multirow{4}{*}{Defenders} & LB & Lucus Radebe \\
-	                           & DC & Michael Duburry \\
-	                           & DC & Dominic Matteo \\
-	                           & RB & Didier Domi \\
-	\midrule
-	\multirow{3}{*}{Midfielders} & MC & David Batty \\
-	                             & MC & Eirik Bakke \\
-	                             & MC & Jody Morris \\
+  \begin{tabular}{lll}
+  \toprule
+  \multicolumn{2}{c}{Position} \\
+  \cmidrule{1-2} % partial horizontal rule
+  Group & Abbrev & Name \\
   \midrule
-	Forward & FW & Jamie McMaster \\
-	\midrule
-	\multirow{2}{*}{Strikers} & ST & Alan Smith \\
-	                          & ST & Mark Viduka \\
-	\bottomrule
-	\end{tabular}
-	\caption{Adapted example from \url{http://en.wikibooks.org/wiki/LaTeX/Tables}. This example uses rules specific to the \texttt{booktabs} package and employs the multi-row functionality of the \texttt{multirow} package.}
-	\label{tab:intro} % \label has to be placed AFTER \caption to produce correct cross-references.
+  Goalkeeper & GK & Paul Robinson \\
+  \midrule
+  \multirow{4}{*}{Defenders} & LB & Lucus Radebe \\
+                             & DC & Michael Duburry \\
+                             & DC & Dominic Matteo \\
+                             & RB & Didier Domi \\
+  \midrule
+  \multirow{3}{*}{Midfielders} & MC & David Batty \\
+                               & MC & Eirik Bakke \\
+                               & MC & Jody Morris \\
+  \midrule
+  Forward & FW & Jamie McMaster \\
+  \midrule
+  \multirow{2}{*}{Strikers} & ST & Alan Smith \\
+                            & ST & Mark Viduka \\
+  \bottomrule
+  \end{tabular}
+  \caption{Adapted example from \url{http://en.wikibooks.org/wiki/LaTeX/Tables}. This example uses rules specific to the \texttt{booktabs} package and employs the multi-row functionality of the \texttt{multirow} package.}
+  \label{tab:intro} % \label has to be placed AFTER \caption to produce correct cross-references.
 \end{table}
 
 \subsection{Images}
@@ -183,20 +183,20 @@ An example of the use of the \verb|alogrithm2e| package is given with Algorithm~
 
 \begin{algorithm}
   \SetKw{BreakFor}{break for}
-	\KwIn{A scalar~$\epsilon$, a matrix $\mathbf{A} = (a_{ij})$, a vector $\vec{b}$, and an initial vector $\vec{x}^{(0)}$}
-	\KwOut{$\vec{x}^{(n)}$ with $\mathbf{A} \vec{x}^{(n)} \approx \vec{b}$}
-	\For{$k\leftarrow 1$ \KwTo maximum iterations}
-	{
-	   \For{$i\leftarrow 1$ \KwTo $n$}
-	   {
-	      $x_i^{(k)} = \frac{1}{a_{ii}} \left(b_i-\sum_{j<i} a_{ij} x_j^{(k)} - \sum_{j>i} a_{ij} x_j^{(k-1)} \right)$\;
-	   }
-	   \If{$\lvert\vec{x}^{(k)}-\vec{x}^{(k-1)}\rvert < \epsilon$}
-	   {\BreakFor\;}
-	}
-	\Return{$\vec{x}^{(k)}$\;}
-	\caption{Gauss-Seidel}
-	\label{alg:gauss-seidel} % \label has to be placed AFTER \caption to produce correct cross-references.
+  \KwIn{A scalar~$\epsilon$, a matrix $\mathbf{A} = (a_{ij})$, a vector $\vec{b}$, and an initial vector $\vec{x}^{(0)}$}
+  \KwOut{$\vec{x}^{(n)}$ with $\mathbf{A} \vec{x}^{(n)} \approx \vec{b}$}
+  \For{$k\leftarrow 1$ \KwTo maximum iterations}
+  {
+     \For{$i\leftarrow 1$ \KwTo $n$}
+     {
+        $x_i^{(k)} = \frac{1}{a_{ii}} \left(b_i-\sum_{j<i} a_{ij} x_j^{(k)} - \sum_{j>i} a_{ij} x_j^{(k-1)} \right)$\;
+     }
+     \If{$\lvert\vec{x}^{(k)}-\vec{x}^{(k-1)}\rvert < \epsilon$}
+     {\BreakFor\;}
+  }
+  \Return{$\vec{x}^{(k)}$\;}
+  \caption{Gauss-Seidel}
+  \label{alg:gauss-seidel} % \label has to be placed AFTER \caption to produce correct cross-references.
 \end{algorithm}
 
 \section{Bibliography}
@@ -258,7 +258,7 @@ The process shown in Table~\ref{tab:ps2pdf} can be employed to strip all private
     & \verb| final.ps final.pdf| \\
   \bottomrule
   \end{tabular}
-  
+
   On Unix-based systems, replace \verb|#| with \verb|=| and \verb|^| with \verb|\|.
   \caption{Anonymization of \gls{pdf} documents.}
   \label{tab:ps2pdf}
