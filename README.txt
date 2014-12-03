@@ -65,6 +65,13 @@ graphics/*.*       Corporate identity graphics of the Vienna University of
                      Technology and its Faculty of Informatics.
 
 
+Known Issues
+-------------
+The minitoc package is incompatible with this document class since the
+incompatibility of the memoir document class is inherited. Use the titletoc
+package as a replacement.
+
+
 Copyright Notice
 ----------------
 Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
