@@ -12,6 +12,7 @@
 \usepackage{multirow}  % Allows table elements to span several rows.
 \usepackage{booktabs}  % Improves the typesettings of tables.
 \usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
+\usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
 \usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
@@ -71,6 +72,9 @@
 \setfirstreviewerdata{Affiliation, Country}
 \setsecondreviewerdata{Affiliation, Country}
 
+% Define convenience macros
+\newcommand{\todo}[1]{{\color{red}\textbf{TODO: {#1}}}} % Comment for the final version, to raise errors
+
 
 \begin{document}
 
@@ -83,19 +87,19 @@
 \addstatementpage
 
 \begin{danksagung*}
-Ihr Text hier.
+\todo{Ihr Text hier.}
 \end{danksagung*}
 
 \begin{acknowledgements*}
-Enter your text here.
+\todo{Enter your text here.}
 \end{acknowledgements*}
 
 \begin{kurzfassung}
-Ihr Text hier.
+\todo{Ihr Text hier.}
 \end{kurzfassung}
 
 \begin{abstract}
-Enter your text here.
+\todo{Enter your text here.}
 \end{abstract}
 
 % Select the language of the thesis, e.g., english or naustrian.
@@ -108,10 +112,10 @@ Enter your text here.
 \mainmatter
 
 \chapter{Introduction}
-Enter your text here.
+\todo{Enter your text here.}
 
 \chapter{Additional Chapter}
-Enter your text here.
+\todo{Enter your text here.}
 
 % Remove following line for the final thesis.
 \input{intro.tex} % A short introduction to LaTeX.
