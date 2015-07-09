@@ -104,16 +104,6 @@ Enter your text here.
 % Add a table of contents (toc)
 \tableofcontents % starred version, i.e., \tableofcontents*, removes the self-entry
 
-% Use an optional list of figures
-\listoffigures % starred version, i.e., \listoffigures*, removes the toc entry
-
-% Use an optional list of tables
-\listoftables % starred version, i.e., \listoftables*, removes the toc entry
-
-% Use an optional list of alogrithms
-\listofalgorithms
-\addcontentsline{toc}{chapter}{List of Algorithms}
-
 % Switch to arabic numbering and start the enumeration of chapters in the table of content.
 \mainmatter
 
@@ -128,14 +118,24 @@ Enter your text here.
 
 \backmatter
 
-% Add a bibliography
-\bibliographystyle{alpha}
-\bibliography{intro}
+% Use an optional list of figures
+\listoffigures % starred version, i.e., \listoffigures*, removes the toc entry
+
+% Use an optional list of tables
+\listoftables % starred version, i.e., \listoftables*, removes the toc entry
+
+% Use an optional list of alogrithms
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
 
 % Add an index
 \printindex
 
 % Add a glossary
 \printglossaries
+
+% Add a bibliography
+\bibliographystyle{alpha}
+\bibliography{intro}
 
 \end{document}
