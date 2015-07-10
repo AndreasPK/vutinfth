@@ -17,6 +17,16 @@
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
 
+% Set PDF document properties
+\hypersetup{
+    pdfpagelayout   = TwoPageRight,           % How the document is shown in PDF viewers (optional).
+    linkbordercolor = {Melon},                % The color of the borders of boxes around crosslinks (optional).
+    pdfauthor       = {Author Name},          % The author's name in the document properties (optional).
+    pdftitle        = {Title},                % The document's title in the document properties (optional).
+    pdfsubject      = {Subject},              % The document's subject in the document properties (optional).
+    pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
+}
+
 \setsecnumdepth{subsection} % enumerate subsections
 
 \nonzeroparskip             % Create space between paragraphs (optional)
