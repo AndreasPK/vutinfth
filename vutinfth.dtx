@@ -73,6 +73,7 @@
 % \changes{v1.0}{2014/09/07}{Initial release version}
 % \changes{v1.1}{2014/10/07}{Added references to the GitLab environment}
 % \changes{v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
+% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle.}
 %
 % \GetFileInfo{vutinfth.dtx}
 %
@@ -646,6 +647,7 @@
 % \end{macro}
 %
 % \begin{macro}{\vutinfth@def@person}
+% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle.}
 % Creates the internal storage for a person's name, titles and gender.
 %    \begin{macrocode}
 \newcommand{\vutinfth@def@person}[5]{%
@@ -677,13 +679,13 @@
       \ifstrempty{#4}{%
         \@namedef{vutinfth@person@#1@fullname}{#3}%
       }{%
-        \@namedef{vutinfth@person@#1@fullname}{#3 #4}%
+        \@namedef{vutinfth@person@#1@fullname}{#3, #4}%
       }%
     }{%
       \ifstrempty{#4}{%
         \@namedef{vutinfth@person@#1@fullname}{#2 #3}%
       }{%
-        \@namedef{vutinfth@person@#1@fullname}{#2 #3 #4}%
+        \@namedef{vutinfth@person@#1@fullname}{#2 #3, #4}%
       }%
     }%
   }%
