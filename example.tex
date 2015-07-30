@@ -31,43 +31,41 @@
     pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
 }
 
-\setsecnumdepth{subsection} % enumerate subsections
+\setsecnumdepth{subsection} % Enumerate subsections.
 
-\nonzeroparskip             % Create space between paragraphs (optional)
-\setlength{\parindent}{0pt} % Remove paragraph identation (optional)
+\nonzeroparskip             % Create space between paragraphs (optional).
+\setlength{\parindent}{0pt} % Remove paragraph identation (optional).
 
-% Use an optional index
-\makeindex
-% Use an optional glossary
-\makeglossaries
-%\glstocfalse % remove the glossaries from the table of contents
+\makeindex      % Use an optional index.
+\makeglossaries % Use an optional glossary.
+%\glstocfalse   % Remove the glossaries from the table of contents.
 
 % Set persons with 4 arguments:
 %  {title before name}{name}{title after name}{gender}
-%  where both titles are optional (i.e. can be given as empty brackets {})
+%  where both titles are optional (i.e. can be given as empty brackets {}).
 \setauthor{Pretitle}{\authorname}{Posttitle}{female}
 \setadvisor{Pretitle}{Forename Surname}{Posttitle}{male}
 
-% For bachelor and master theses
+% For bachelor and master theses:
 \setfirstassistant{Pretitle}{Forename Surname}{Posttitle}{male}
 \setsecondassistant{Pretitle}{Forename Surname}{Posttitle}{male}
 \setthirdassistant{Pretitle}{Forename Surname}{Posttitle}{male}
 
-% For dissertations
+% For dissertations:
 \setfirstreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
 \setsecondreviewer{Pretitle}{Forename Surname}{Posttitle}{male}
 
-% For dissertations at the PhD School
+% For dissertations at the PhD School:
 \setsecondadvisor{Pretitle}{Forename Surname}{Posttitle}{male}
 
-% Required data
+% Required data.
 \setaddress{Address}
 \setregnumber{0123456}
 \setdate{01}{01}{2001}
-\settitle{\thesistitle}{Titel der Arbeit} % sets English and German version of the title (both can be English or German)
-\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % sets English and German version of the subtitle (both can be English or German)
+\settitle{\thesistitle}{Titel der Arbeit} % Sets English and German version of the title (both can be English or German).
+\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
 
-% Select the thesis type: bachelor / master / doctor / phd-school
+% Select the thesis type: bachelor / master / doctor / phd-school.
 % Bachelor:
 \setthesis{bachelor}
 %
@@ -82,25 +80,25 @@
 % Doctor at the PhD School
 %\setthesis{phd-school} % Deactivate non-English title pages (see below)
 
-% For bachelor and master
-\setcurriculum{Media Informatics and Visual Computing}{Medieninformatik und Visual Computing} % sets the English and German name of the curriculum
+% For bachelor and master:
+\setcurriculum{Media Informatics and Visual Computing}{Medieninformatik und Visual Computing} % Sets the English and German name of the curriculum.
 
-% For dissertations at the PhD School
+% For dissertations at the PhD School:
 \setfirstreviewerdata{Affiliation, Country}
 \setsecondreviewerdata{Affiliation, Country}
 
-% Define convenience macros
-\newcommand{\todo}[1]{{\color{red}\textbf{TODO: {#1}}}} % Comment for the final version, to raise errors
+% Define convenience macros.
+\newcommand{\todo}[1]{{\color{red}\textbf{TODO: {#1}}}} % Comment for the final version, to raise errors.
 
 
 \begin{document}
 
-\frontmatter % switches to roman numbering
+\frontmatter % Switches to roman numbering.
 % The structure of the thesis has to conform to
 %  http://www.informatik.tuwien.ac.at/dekanat
 
-\addtitlepage{naustrian} % German title page (not for dissertations at the PhD School)
-\addtitlepage{english} % English title page
+\addtitlepage{naustrian} % German title page (not for dissertations at the PhD School).
+\addtitlepage{english} % English title page.
 \addstatementpage
 
 \begin{danksagung*}
@@ -122,8 +120,8 @@
 % Select the language of the thesis, e.g., english or naustrian.
 \selectlanguage{english}
 
-% Add a table of contents (toc)
-\tableofcontents % starred version, i.e., \tableofcontents*, removes the self-entry
+% Add a table of contents (toc).
+\tableofcontents % Starred version, i.e., \tableofcontents*, removes the self-entry.
 
 % Switch to arabic numbering and start the enumeration of chapters in the table of content.
 \mainmatter
@@ -139,23 +137,23 @@
 
 \backmatter
 
-% Use an optional list of figures
-\listoffigures % starred version, i.e., \listoffigures*, removes the toc entry
+% Use an optional list of figures.
+\listoffigures % Starred version, i.e., \listoffigures*, removes the toc entry.
 
-% Use an optional list of tables
-\listoftables % starred version, i.e., \listoftables*, removes the toc entry
+% Use an optional list of tables.
+\listoftables % Starred version, i.e., \listoftables*, removes the toc entry.
 
-% Use an optional list of alogrithms
+% Use an optional list of alogrithms.
 \listofalgorithms
 \addcontentsline{toc}{chapter}{List of Algorithms}
 
-% Add an index
+% Add an index.
 \printindex
 
-% Add a glossary
+% Add a glossary.
 \printglossaries
 
-% Add a bibliography
+% Add a bibliography.
 \bibliographystyle{alpha}
 \bibliography{intro}
 
