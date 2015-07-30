@@ -17,12 +17,16 @@
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
 
+% Define convenience functions to use the author name and the thesis title in the PDF document properties.
+\newcommand{\authorname}{Forename Surname} % The author name without titles.
+\newcommand{\thesistitle}{Title of the Thesis} % The title of the thesis. The English version should be used, if it exists.
+
 % Set PDF document properties
 \hypersetup{
     pdfpagelayout   = TwoPageRight,           % How the document is shown in PDF viewers (optional).
     linkbordercolor = {Melon},                % The color of the borders of boxes around crosslinks (optional).
-    pdfauthor       = {Author Name},          % The author's name in the document properties (optional).
-    pdftitle        = {Title},                % The document's title in the document properties (optional).
+    pdfauthor       = {\authorname},          % The author's name in the document properties (optional).
+    pdftitle        = {\thesistitle},         % The document's title in the document properties (optional).
     pdfsubject      = {Subject},              % The document's subject in the document properties (optional).
     pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
 }
@@ -41,7 +45,7 @@
 % Set persons with 4 arguments:
 %  {title before name}{name}{title after name}{gender}
 %  where both titles are optional (i.e. can be given as empty brackets {})
-\setauthor{Pretitle}{Forename Surname}{Posttitle}{female}
+\setauthor{Pretitle}{\authorname}{Posttitle}{female}
 \setadvisor{Pretitle}{Forename Surname}{Posttitle}{male}
 
 % For bachelor and master theses
@@ -60,7 +64,7 @@
 \setaddress{Address}
 \setregnumber{0123456}
 \setdate{01}{01}{2001}
-\settitle{Title of the Thesis}{Titel der Arbeit} % sets English and German version of the title (both can be English or German)
+\settitle{\thesistitle}{Titel der Arbeit} % sets English and German version of the title (both can be English or German)
 \setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % sets English and German version of the subtitle (both can be English or German)
 
 % Select the thesis type: bachelor / master / doctor / phd-school
