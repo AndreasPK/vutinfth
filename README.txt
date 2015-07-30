@@ -46,6 +46,9 @@ Documentation
 -------------
 The documentation can be found in vutinfth.pdf, which is generated directly
 from vutinfth.dtx.
+This document class is derived from the memoir class at
+                       https://www.ctan.org/pkg/memoir
+where additional documentation can be found.
 
 
 Files
