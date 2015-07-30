@@ -27,14 +27,19 @@ Installation
 ------------
 To use the vutinfth class, it has first to be generated from the documented
 source file vutinfth.dtx. This is achieved by executing the build script for
-Windows systems (build.bat) or Unix-based systems (build.sh). The generated
-document class vutinfth.cls has then to be placed in a directory that is part
-of the search path of the LaTeX compiler. The folder of the thesis file is a
-valid location.
+Windows systems (build-all.bat) or Unix-based systems (build-all.sh). The
+generated document class vutinfth.cls has then to be placed in a directory that
+is part of the search path of the LaTeX compiler. The folder of the thesis file
+is a valid location.
 The build script also generate an exemplary LaTeX document that serves both as
 an introduction to LaTeX and as a verification of the installed typesetting
 system. The example document is compiled to example.pdf and it should match the
 provided reference solution example-ref.pdf.
+Since the class file needs to be generated only once, build scripts for the
+actual thesis documents are provided for Windows systems (build-thesis.bat) and
+Unix-based systems (build-thesis.sh). These scripts do not rebuild the class
+file and the actual file name of the thesis file has to be provided by directly
+editing these files.
 
 
 Documentation
@@ -45,10 +50,12 @@ from vutinfth.dtx.
 
 Files
 -----
-build.bat          The batch file to generate all necessary files on Windows
+build-all.bat      The batch file to generate all necessary files on Windows
                      systems.
-build.sh           The batch file to generate all necessary files on Unix-based
+build-all.sh       The batch file to generate all necessary files on Unix-based
                      systems.
+build-thesis.bat   The batch file to generate the thesis on Windows systems.
+build-thesis.sh    The batch file to generate the thesis on Unix-based systems.
 example-ref.pdf    The reference solution for the compiled example document.
 example.tex        An LaTeX source file showing the use of the vutinfth
                      document class.
