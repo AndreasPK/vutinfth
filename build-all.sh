@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (C) 2014-2015 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+# Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
 
 CLASS=vutinfth
 SOURCE=example

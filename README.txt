@@ -1,7 +1,7 @@
                        vutinfth LaTeX2e document class
                            Academic thesis template
 
-             by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+                  by Thomas Auzinger <thomas@auzinger.name>
 
 
 Description
@@ -74,7 +74,7 @@ package as a replacement.
 
 Copyright Notice
 ----------------
-Copyright (C) 2014-2015 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3

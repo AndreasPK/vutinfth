@@ -1,4 +1,4 @@
-rem Copyright (C) 2014-2015 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+rem Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
 
 @echo off
 set CLASS=vutinfth
