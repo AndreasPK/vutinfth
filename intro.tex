@@ -130,27 +130,27 @@ The commands \verb|\multirow| and \verb|\multicolumn| allow table elements to sp
 \begin{table}[h] % placement specifier
   \centering
   \begin{tabular}{lll}
-  \toprule
-  \multicolumn{2}{c}{Position} \\
-  \cmidrule{1-2} % partial horizontal rule
-  Group & Abbrev & Name \\
-  \midrule
-  Goalkeeper & GK & Paul Robinson \\
-  \midrule
-  \multirow{4}{*}{Defenders} & LB & Lucus Radebe \\
-                             & DC & Michael Duburry \\
-                             & DC & Dominic Matteo \\
-                             & RB & Didier Domi \\
-  \midrule
-  \multirow{3}{*}{Midfielders} & MC & David Batty \\
-                               & MC & Eirik Bakke \\
-                               & MC & Jody Morris \\
-  \midrule
-  Forward & FW & Jamie McMaster \\
-  \midrule
-  \multirow{2}{*}{Strikers} & ST & Alan Smith \\
-                            & ST & Mark Viduka \\
-  \bottomrule
+    \toprule
+    \multicolumn{2}{c}{Position} \\
+    \cmidrule{1-2} % partial horizontal rule
+    Group & Abbrev & Name \\
+    \midrule
+    Goalkeeper & GK & Paul Robinson \\
+    \midrule
+    \multirow{4}{*}{Defenders} & LB & Lucus Radebe \\
+                               & DC & Michael Duburry \\
+                               & DC & Dominic Matteo \\
+                               & RB & Didier Domi \\
+    \midrule
+    \multirow{3}{*}{Midfielders} & MC & David Batty \\
+                                 & MC & Eirik Bakke \\
+                                 & MC & Jody Morris \\
+    \midrule
+    Forward & FW & Jamie McMaster \\
+    \midrule
+    \multirow{2}{*}{Strikers} & ST & Alan Smith \\
+                              & ST & Mark Viduka \\
+    \bottomrule
   \end{tabular}
   \caption{Adapted example from \url{http://en.wikibooks.org/wiki/LaTeX/Tables}. This example uses rules specific to the \texttt{booktabs} package and employs the multi-row functionality of the \texttt{multirow} package.}
   \label{tab:intro} % \label has to be placed AFTER \caption to produce correct cross-references.
