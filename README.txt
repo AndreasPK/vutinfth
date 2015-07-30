@@ -82,6 +82,12 @@ incompatibility of the memoir document class is inherited. Use the titletoc
 package as a replacement.
 
 
+Acknowledgements
+----------------
+Hiroyuki Sakai provided valuable feedback that accounts for several
+improvements in version 1.4.
+
+
 Copyright Notice
 ----------------
 Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
