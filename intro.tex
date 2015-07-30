@@ -159,12 +159,23 @@ The commands \verb|\multirow| and \verb|\multicolumn| allow table elements to sp
 \subsection{Images}
 
 An image is added to a document via the \verb|\includegraphics| command as shown in Figure~\ref{fig:intro}.
+The \verb|\subcaption| command can be used to reference subfigures, such as Figure~\ref{fig:intro:full width} and~\ref{fig:intro:half width}.
 
 \begin{figure}[h]
-  \centering
-  \includegraphics[width=0.5\textwidth]{TU_INF_Logo_gray}
-  \caption{The header logo at half the text width.}
-  \label{fig:intro} % \label has to be placed AFTER \caption to produce correct cross-references.
+  \begin{subfigure}[b]{0.5\columnwidth}
+    \centering
+    \includegraphics[width=\textwidth]{TU_INF_Logo_gray}
+    \subcaption{The header logo at text width.}
+    \label{fig:intro:full width}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\columnwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{TU_INF_Logo_gray}
+    \subcaption{The header logo at half the text width.}
+    \label{fig:intro:half width}
+  \end{subfigure}
+  \caption{The header logo at different sizes.}
+  \label{fig:intro} % \label has to be placed AFTER \caption (or \subcaption) to produce correct cross-references.
 \end{figure}
 
 \subsection{Mathematical Expressions}
