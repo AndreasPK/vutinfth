@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+# Copyright (C) 2014-2015 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
 
 # Replace the 'x' in the next line with the name of the thesis' main LaTeX document without the '.tex' extension
 SOURCE=x

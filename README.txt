@@ -74,7 +74,7 @@ package as a replacement.
 
 Copyright Notice
 ----------------
-Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+Copyright (C) 2014-2015 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3
