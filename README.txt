@@ -1,7 +1,7 @@
                        vutinfth LaTeX2e document class
                            Academic thesis template
 
-             by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+                  by Thomas Auzinger <thomas@auzinger.name>
 
 
 Description
@@ -27,28 +27,48 @@ Installation
 ------------
 To use the vutinfth class, it has first to be generated from the documented
 source file vutinfth.dtx. This is achieved by executing the build script for
-Windows systems (build.bat) or Unix-based systems (build.sh). The generated
-document class vutinfth.cls has then to be placed in a directory that is part
-of the search path of the LaTeX compiler. The folder of the thesis file is a
-valid location.
-The build script also generate an exemplary LaTeX document that serves both as
+Windows systems (build-all.bat) or Unix-based systems (build-all.sh). Since the
+generation process uses LaTeX itself, make sure that the LaTeX installation is
+up-to-date.
+The generated document class vutinfth.cls has then to be placed in a directory
+that is part of the search path of the LaTeX compiler. The folder of the thesis
+file is a valid location.
+The build scripts also generate an exemplary LaTeX document that serves both as
 an introduction to LaTeX and as a verification of the installed typesetting
 system. The example document is compiled to example.pdf and it should match the
 provided reference solution example-ref.pdf.
+
+
+Usage
+-----
+When writing the actual thesis, the build functionalities of the used editor
+are usually employed. For advanced functionalities of LaTeX, such as
+glossaries, acronyms or indices, more complex build commands have to be used,
+which often lead to difficulties.
+Thus, additional build scripts for the thesis documents are provided for
+Windows systems (build-thesis.bat) and Unix-based systems (build-thesis.sh).
+These scripts do not rebuild the class file.
+When using these scripts, the file name of the thesis file has to be provided
+by directly editing these files.
 
 
 Documentation
 -------------
 The documentation can be found in vutinfth.pdf, which is generated directly
 from vutinfth.dtx.
+This document class is derived from the memoir class at
+                       https://www.ctan.org/pkg/memoir
+where additional documentation can be found.
 
 
 Files
 -----
-build.bat          The batch file to generate all necessary files on Windows
+build-all.bat      The batch file to generate all necessary files on Windows
                      systems.
-build.sh           The batch file to generate all necessary files on Unix-based
+build-all.sh       The batch file to generate all necessary files on Unix-based
                      systems.
+build-thesis.bat   The batch file to generate the thesis on Windows systems.
+build-thesis.sh    The batch file to generate the thesis on Unix-based systems.
 example-ref.pdf    The reference solution for the compiled example document.
 example.tex        An LaTeX source file showing the use of the vutinfth
                      document class.
@@ -65,9 +85,22 @@ graphics/*.*       Corporate identity graphics of the Vienna University of
                      Technology and its Faculty of Informatics.
 
 
+Known Issues
+-------------
+The minitoc package is incompatible with this document class since the
+incompatibility of the memoir document class is inherited. Use the titletoc
+package as a replacement.
+
+
+Acknowledgements
+----------------
+Hiroyuki Sakai provided valuable feedback that accounts for several
+improvements in version 1.4.
+
+
 Copyright Notice
 ----------------
-Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3

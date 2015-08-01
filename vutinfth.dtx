@@ -1,7 +1,7 @@
 % \iffalse meta-comment
 %
 %% vutinfth.dtx
-%% Copyright (C) 2014 by Thomas Auzinger <thomas.auzinger@cg.tuwien.ac.at>
+%% Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -28,7 +28,7 @@
 %<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<class>\ProvidesClass{vutinfth}
 %<*class>
-    [2014/11/25 v1.3 Vienna University of Technology Faculty of Informatics thesis template]
+    [2015/08/01 v1.4 Vienna University of Technology Faculty of Informatics thesis template]
 %</class>
 %
 %<*driver>
@@ -73,6 +73,7 @@
 % \changes{v1.0}{2014/09/07}{Initial release version}
 % \changes{v1.1}{2014/10/07}{Added references to the GitLab environment}
 % \changes{v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
+% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle and changed mainmatter pagestyle to 'Ruled'.}
 %
 % \GetFileInfo{vutinfth.dtx}
 %
@@ -89,7 +90,7 @@
 %
 % \title{The \textsf{vutinfth} class\thanks{This document
 %   corresponds to \textsf{vutinfth}~\fileversion, dated \filedate.}}
-% \author{Thomas Auzinger \\ \texttt{thomas.auzinger@cg.tuwien.ac.at}}
+% \author{Thomas Auzinger \\ \texttt{thomas@auzinger.name}}
 %
 % \maketitle
 %
@@ -112,6 +113,13 @@
 % These can be found at \url{http://www.informatik.tuwien.ac.at/dekanat}.
 % Thesis authors are advised to consult Section~\ref{sec:user} for a documentation of all relevant commands.
 % Information for class developers is provided in Section~\ref{sec:class}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Known Issues}
+%
+% This class is incompatible with the |minitoc| package as of version 60, due to the incompatibility of the underlying |memoir| class.
+% Use the |titletoc| package as a replacement.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -639,6 +647,7 @@
 % \end{macro}
 %
 % \begin{macro}{\vutinfth@def@person}
+% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle.}
 % Creates the internal storage for a person's name, titles and gender.
 %    \begin{macrocode}
 \newcommand{\vutinfth@def@person}[5]{%
@@ -670,13 +679,13 @@
       \ifstrempty{#4}{%
         \@namedef{vutinfth@person@#1@fullname}{#3}%
       }{%
-        \@namedef{vutinfth@person@#1@fullname}{#3 #4}%
+        \@namedef{vutinfth@person@#1@fullname}{#3, #4}%
       }%
     }{%
       \ifstrempty{#4}{%
         \@namedef{vutinfth@person@#1@fullname}{#2 #3}%
       }{%
-        \@namedef{vutinfth@person@#1@fullname}{#2 #3 #4}%
+        \@namedef{vutinfth@person@#1@fullname}{#2 #3, #4}%
       }%
     }%
   }%
@@ -1892,13 +1901,14 @@
 %
 % \begin{macro}{\frontmatter}
 % \begin{macro}{\mainmatter}
+% \changes{v1.4}{2015/08/01}{Added 'Ruled' pagestyle.}
 % \begin{macro}{\backmatter}
 % Apply the default page style to the thesis.
 %    \begin{macrocode}
 \aliaspagestyle{chapter}{vutinfth@pagestyle@default}%
 \aliaspagestyle{part}{vutinfth@pagestyle@default}%
 \addto\frontmatter{\pagestyle{vutinfth@pagestyle@default}}%
-\addto\mainmatter{\pagestyle{vutinfth@pagestyle@default}}%
+\addto\mainmatter{\pagestyle{Ruled}}%
 \addto\backmatter{\pagestyle{vutinfth@pagestyle@default}}%
 %    \end{macrocode}
 % \end{macro}
