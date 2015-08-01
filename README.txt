@@ -27,10 +27,12 @@ Installation
 ------------
 To use the vutinfth class, it has first to be generated from the documented
 source file vutinfth.dtx. This is achieved by executing the build script for
-Windows systems (build-all.bat) or Unix-based systems (build-all.sh). The
-generated document class vutinfth.cls has then to be placed in a directory that
-is part of the search path of the LaTeX compiler. The folder of the thesis file
-is a valid location.
+Windows systems (build-all.bat) or Unix-based systems (build-all.sh). Since the
+generation process uses LaTeX itself, make sure that the LaTeX installation is
+up-to-date.
+The generated document class vutinfth.cls has then to be placed in a directory
+that is part of the search path of the LaTeX compiler. The folder of the thesis
+file is a valid location.
 The build scripts also generate an exemplary LaTeX document that serves both as
 an introduction to LaTeX and as a verification of the installed typesetting
 system. The example document is compiled to example.pdf and it should match the
