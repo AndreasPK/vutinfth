@@ -37,11 +37,19 @@ The build scripts also generate an exemplary LaTeX document that serves both as
 an introduction to LaTeX and as a verification of the installed typesetting
 system. The example document is compiled to example.pdf and it should match the
 provided reference solution example-ref.pdf.
-Since the class file needs to be generated only once, build scripts for the
-actual thesis documents are provided for Windows systems (build-thesis.bat) and
-Unix-based systems (build-thesis.sh). These scripts do not rebuild the class
-file and the actual file name of the thesis file has to be provided by directly
-editing these files.
+
+
+Usage
+-----
+When writing the actual thesis, the build functionalities of the used editor
+are usually employed. For advanced functionalities of LaTeX, such as
+glossaries, acronyms or indices, more complex build commands have to be used,
+which often lead to difficulties.
+Thus, additional build scripts for the thesis documents are provided for
+Windows systems (build-thesis.bat) and Unix-based systems (build-thesis.sh).
+These scripts do not rebuild the class file.
+When using these scripts, the file name of the thesis file has to be provided
+by directly editing these files.
 
 
 Documentation
