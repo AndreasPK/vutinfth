@@ -7,9 +7,9 @@
 Description
 -----------
 The vutinfth document class is a LaTeX2e-based template for all theses written
-at the Faculty of Informatics at the Vienna University of Technology. This
-package includes the document class and its documentation as well as an example
-document that includes a short introduction to LaTeX.
+at the Faculty of Informatics at the TU Wien. This package includes the
+document class and its documentation as well as an example document that
+includes a short introduction to LaTeX.
 
 
 Support
@@ -81,8 +81,8 @@ vutinfth.dtx       The documented source code and documentation file of the
                      vutinfth document class.
 vutinfth.ins       The installer file of the vutinfth document class.
 
-graphics/*.*       Corporate identity graphics of the Vienna University of
-                     Technology and its Faculty of Informatics.
+graphics/*.*       Corporate identity graphics of the TU Wien and its Faculty
+                     of Informatics.
 
 
 Known Issues
@@ -100,7 +100,7 @@ improvements in version 1.4.
 
 Copyright Notice
 ----------------
-Copyright (C) 2014-2015 by Thomas Auzinger <thomas@auzinger.name>
+Copyright (C) 2014-2016 by Thomas Auzinger <thomas@auzinger.name>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3
@@ -118,5 +118,5 @@ This work consists of the files vutinfth.dtx and vutinfth.ins
 and the derived file vutinfth.cls.
 This work also consists of the file intro.tex.
 
-The 'TU Wien' logo and 'Fakultät für !nformatik' logo are copyright of the
-Vienna University of Technology.
+The 'TU Wien' logo and 'Fakultät für !nformatik' logo are copyright of the TU
+Wien.
