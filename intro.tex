@@ -62,6 +62,7 @@ Otherwise, obscure errors and tedious debugging ensue.
 A multitude of \TeX\ \glspl{texteditor} are available differing in their editing models, their supported operating systems and their feature sets.
 A comprehensive overview of \glspl{texteditor} can be found at the Wikipedia page  \url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}.
 TeXstudio (\url{http://texstudio.sourceforge.net/}) is recommended.
+Most editors support the scrolling the typeset preview document to a location in the source document by \verb|Ctrl| clicking the location in the source document.
 
 \section{Compilation}
 
@@ -152,7 +153,7 @@ The commands \verb|\multirow| and \verb|\multicolumn| allow table elements to sp
                               & ST & Mark Viduka \\
     \bottomrule
   \end{tabular}
-  \caption{Adapted example from \url{https://en.wikibooks.org/wiki/LaTeX/Tables}. This example uses rules specific to the \texttt{booktabs} package and employs the multi-row functionality of the \texttt{multirow} package.}
+  \caption{Adapted example from the \LaTeX guide at \url{https://en.wikibooks.org/wiki/LaTeX/Tables}. This example uses rules specific to the \texttt{booktabs} package and employs the multi-row functionality of the \texttt{multirow} package.}
   \label{tab:intro} % \label has to be placed AFTER \caption to produce correct cross-references.
 \end{table}
 
@@ -162,13 +163,14 @@ An image is added to a document via the \verb|\includegraphics| command as shown
 The \verb|\subcaption| command can be used to reference subfigures, such as Figure~\ref{fig:intro:full width} and~\ref{fig:intro:half width}.
 
 \begin{figure}[h]
-  \begin{subfigure}[b]{0.5\columnwidth}
+  \centering
+  \begin{subfigure}[b]{0.45\columnwidth}
     \centering
     \includegraphics[width=\textwidth]{TU_INF_Logo_gray}
     \subcaption{The header logo at text width.}
     \label{fig:intro:full width}
   \end{subfigure}
-  \begin{subfigure}[b]{0.5\columnwidth}
+  \begin{subfigure}[b]{0.45\columnwidth}
     \centering
     \includegraphics[width=0.5\textwidth]{TU_INF_Logo_gray}
     \subcaption{The header logo at half the text width.}
@@ -189,8 +191,8 @@ A mathematical expression can be inserted inline as $\sum_{n=1}^{\infty} \frac{1
 
 \subsection{Pseudo Code}
 
-The presentation of algorithms can be achieved with various packages, such as \verb|algorithmic|, \verb|algorithm2e|, \verb|algorithmicx|, or \verb|algpseudocode|.
-See \url{https://tex.stackexchange.com/questions/229355} for an overview.
+The presentation of algorithms can be achieved with various packages; the most popular are \verb|algorithmic|, \verb|algorithm2e|, \verb|algorithmicx|, or \verb|algpseudocode|.
+An overview is given at \url{https://tex.stackexchange.com/questions/229355}.
 An example of the use of the \verb|alogrithm2e| package is given with Algorithm~\ref{alg:gauss-seidel}.
 
 \begin{algorithm}
@@ -221,7 +223,7 @@ The generation of the formatted bibliography needs a separate execution of \verb
 \section{Table of Contents}
 
 The table of contents is automatically built by successive runs of the compilation, e.g., of \verb|pdflatex.exe|.
-The command \verb|\setsecnumdepth| allows the specification of the depth of the table of contents and additional entries can be added via \verb|\addcontentsline|.
+The command \verb|\setsecnumdepth| allows the specification of the depth of the table of contents and additional entries can be added to the table of contents using \verb|\addcontentsline|.
 The starred versions of the sectioning commands, i.e., \verb|\chapter*|, \verb|\section*|, etc., remove the corresponding entry from the table of contents.
 
 \section{Acronyms / Glossary / Index}
@@ -240,7 +242,7 @@ Since \TeX\ and its successors do not employ a \gls{wysiwyg} editing scheme, sev
       This helps not only the user navigation through the text, but also enables revision control systems (e.g. \gls{svn}, Git) to show the exact changes authored by different users.
       Paragraphs are separated by one (or more) empty lines.
 \item Environments, which are defined by a matching pair of \verb|\begin{name}| and \verb|\end{name}|, can be indented by whitespace to show their hierarchical structure.
-\item In most cases, the explicit use of whitespace (e.g. \verb|\hspace{4em}| or \verb|\vspace{1.5cm}|) violates typographic guidelines and rules.
+\item In most cases, the explicit use of whitespace (e.g. by adding \verb|\hspace{4em}| or \verb|\vspace{1.5cm}|) violates typographic guidelines and rules.
       Explicit formatting should only be employed as a last resort and, most likely, better ways to achieve the desired layout can be found by a quick web search.
 \item The use of bold or italic text is generally not supported by typographic considerations and the semantically meaningful \verb|\emph{|\texttt{$\dots$}\verb|}| should be used.
 \end{itemize}
@@ -299,7 +301,7 @@ In the following, a short, non-exhaustive list of relevant \gls{ctan}-hosted pac
 \item[\href{https://www.ctan.org/pkg/amsmath}{amsmath}] Enhanced functionality for typesetting mathematical expressions.
 \item[\href{https://www.ctan.org/pkg/amsfonts}{amssymb}] Provides a multitude of mathematical symbols.
 \item[\href{https://www.ctan.org/pkg/booktabs}{booktabs}] Improved typesetting of tables.
-\item[\href{https://www.ctan.org/pkg/enumitem}{enumitem}] User control over the layout of lists (\verb|itemize|, \verb|enumerate|, \verb|description|).
+\item[\href{https://www.ctan.org/pkg/enumitem}{enumitem}] Control over the layout of lists (\verb|itemize|, \verb|enumerate|, \verb|description|).
 \item[\href{https://www.ctan.org/pkg/fontenc}{fontenc}] Determines font encoding of the output.
 \item[\href{https://www.ctan.org/pkg/glossaries}{glossaries}] Create glossaries and list of acronyms.
 \item[\href{https://www.ctan.org/pkg/graphicx}{graphicx}] Insert images into the document.
