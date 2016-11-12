@@ -162,13 +162,14 @@ An image is added to a document via the \verb|\includegraphics| command as shown
 The \verb|\subcaption| command can be used to reference subfigures, such as Figure~\ref{fig:intro:full width} and~\ref{fig:intro:half width}.
 
 \begin{figure}[h]
-  \begin{subfigure}[b]{0.5\columnwidth}
+  \centering
+  \begin{subfigure}[b]{0.45\columnwidth}
     \centering
     \includegraphics[width=\textwidth]{TU_INF_Logo_gray}
     \subcaption{The header logo at text width.}
     \label{fig:intro:full width}
   \end{subfigure}
-  \begin{subfigure}[b]{0.5\columnwidth}
+  \begin{subfigure}[b]{0.45\columnwidth}
     \centering
     \includegraphics[width=0.5\textwidth]{TU_INF_Logo_gray}
     \subcaption{The header logo at half the text width.}
