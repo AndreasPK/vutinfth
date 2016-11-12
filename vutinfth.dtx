@@ -75,6 +75,7 @@
 % \changes{v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
 % \changes{v1.4}{2015/08/01}{Added comma to separate posttitle and changed mainmatter pagestyle to `Ruled'.}
 % \changes{v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
+% \changes{v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
 %
 % \GetFileInfo{vutinfth.dtx}
 %
@@ -198,7 +199,7 @@
 %   \midrule
 %   |\setauthor| & Author of the thesis & All & No \\
 %   |\setadvisor| & Main advisor of the thesis & All & No \\
-%   |\setsecondadvisor| & Second advisor of the thesis & P & Yes \\
+%   |\setsecondadvisor| & Second advisor of the thesis & D, P & Yes \\
 %   |\setfirstassistant| & First advising assistant & B, M & Yes \\
 %   |\setsecondassistant| & Second advising assistant & B, M & Yes \\
 %   |\setthirdassistant| & Third advising assistant & B, M & Yes \\
@@ -1164,13 +1165,15 @@
 % \begin{macro}{PolyLinguals}
 % \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
 % \changes{v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
+% \changes{v1.6}{2016/11/12}{Provided German term for second advisor.}
 % Creates the polylingual expressions.
 %    \begin{macrocode}
 \CreatePolylingual[
   english=Advisor,
   naustrian=Betreuung]{Advisor}%
 \CreatePolylingual[
-  english=Second advisor]{Secondadvisor}%
+  english=Second advisor,
+  naustrian=Zweitbetreuung]{Secondadvisor}%
 \CreatePolylingual[
   english=submitted in partial fulfillment of the requirements
     for the degree of,
@@ -1455,6 +1458,7 @@
 %
 % \begin{macro}{\AdvisorBlock}
 % \changes{v1.3}{2014/11/25}{Updated to support second advisor. \issue{4}}
+% \changes{v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
 % Generates a block with the advisor's name (and potential assistances' names). An error is thrown, if the advisors are not defined consecutively, starting with the first.
 %    \begin{macrocode}
 \newcommand{\AdvisorBlock}{%
@@ -1494,13 +1498,11 @@
       \vutinfth@normalsize
       \vutinfth@polylingual@Advisor:
       \vutinfth@person@advisor@fullname
-      \ifphd{%
-        \ifdef{\vutinfth@person@secondadvisor@def}{%
-          \\
-          \vutinfth@polylingual@Secondadvisor:
-          \vutinfth@person@secondadvisor@fullname
-        }{}%
-      }%
+      \ifdef{\vutinfth@person@secondadvisor@def}{%
+        \\
+        \vutinfth@polylingual@Secondadvisor:
+        \vutinfth@person@secondadvisor@fullname
+      }{}%
     \end{minipage}\par%
   }%
 }%
