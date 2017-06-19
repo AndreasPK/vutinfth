@@ -100,7 +100,7 @@ improvements in version 1.4.
 
 Copyright Notice
 ----------------
-Copyright (C) 2014-2016 by Thomas Auzinger <thomas@auzinger.name>
+Copyright (C) 2014-2017 by Thomas Auzinger <thomas@auzinger.name>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3
