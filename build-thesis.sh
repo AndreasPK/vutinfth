@@ -18,4 +18,3 @@ pdflatex $SOURCE
 echo
 echo
 echo Thesis document compiled.
-sleep

@@ -29,4 +29,3 @@ pdflatex $SOURCE
 echo
 echo
 echo Class file and example document compiled.
-sleep
