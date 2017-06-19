@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (C) 2014-2016 by Thomas Auzinger <thomas@auzinger.name>
+# Copyright (C) 2014-2017 by Thomas Auzinger <thomas@auzinger.name>
 
 CLASS=vutinfth
 SOURCE=example
@@ -29,4 +29,3 @@ pdflatex $SOURCE
 echo
 echo
 echo Class file and example document compiled.
-sleep
